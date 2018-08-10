@@ -13,7 +13,3 @@ eval "mkdir $PROJECT_PATH"
 eval $cmd_download_source 
 eval $cmd_download_token_from_s3
 
-PRE_FIX="--prefix $PROJECT_PATH"
-cd $PROJECT_PATH
-eval $("$NPM_PATH/npm install 2>&1 | tee install_log.txt")
-eval $("$NPM_PATH/npm start") 
