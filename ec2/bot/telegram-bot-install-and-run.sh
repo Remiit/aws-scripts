@@ -9,7 +9,10 @@ NPM_PATH="$HOME/.nvm/versions/node/v8.11.3/bin"
 cmd_download_source="git clone $GIT_REPO $PROJECT_PATH"
 cmd_download_token_from_s3="aws s3 cp $S3_TOKEN_PATH $CONFIG_PATH/"
 
-eval "mkdir $PROJECT_PATH"
 eval $cmd_download_source 
 eval $cmd_download_token_from_s3
 
+cmd_npm_install="sudo npm install --prefix $PROJECT_PATH"
+cmd_npm_start="sudo npm start --prefix $PROJECT_PATH"
+eval $cmd_npm_install
+eval $cmd_npm_start
